@@ -1,0 +1,57 @@
+import java.util.*; 
+/*
+* Currently untested and thus incomplete
+*unable to be tested fully until hand's bug is solved.
+* test function needs to be written in main
+*
+*
+*/
+public class Player {
+	private String name;
+	private int startMoney;
+	private int currentMoney;
+	private boolean isDealer;
+	private boolean auto;
+	public Player(String n, int cash) //Initializes a new player
+	{
+		startMoney = cash;
+		name = n;
+		isDealer =false;
+		auto = false;
+	}
+	public void makeDealer()
+	{
+		isDealer=true;
+	}
+	public void makeBot()
+	{
+		auto=true;
+	}
+	public boolean checkDealer()
+	{
+		return isDealer;
+	}
+	public int getcash()
+	{
+		return currentMoney;
+	}
+	public void pay(int n)
+	{
+		currentMoney+=n;
+	}
+	public void bet()
+	{
+		Scanner in = new Scanner(System.in);
+		int n = in.nextInt();
+		if (n<currentMoney|| n<0)
+		{
+			System.out.println("please enter a value less than players current Money");
+			this.bet();
+		}
+		currentMoney-=n;	
+	}
+	public static void main(String args[])
+	{
+		//TBD... Test case needs to test bet function
+	}
+}
