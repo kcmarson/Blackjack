@@ -10,6 +10,8 @@ public class Deck {
 			for(int j = 0;j<13;j++)
 				for(int k = 0;k<4;k++)
 					deck.add(new Card(j,k));
+		/* Edit one
+		*/
 	}
 	public Deck(int n) //need to add throw/ catch for strange number of decks (<0 || >=4100000... (int/52)
 	{
